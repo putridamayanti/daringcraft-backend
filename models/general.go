@@ -1,6 +1,9 @@
 package models
 
-import "mime/multipart"
+import (
+	"mime/multipart"
+	"time"
+)
 
 type Response struct {
 	Status 		int				`json:"status"`
@@ -13,3 +16,8 @@ type File struct {
 	MultiFile 	[]*multipart.FileHeader 	`form:"file"`
 }
 
+type Media struct {
+	Id 			string			`json:"id"`
+	Url 		*string			`json:"url"`
+	CreatedAt	time.Time		`json:"createdAt"`
+}

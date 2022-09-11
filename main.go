@@ -30,11 +30,38 @@ func main()  {
 	router.Use(lib.CorsMiddleware())
 	router.Use(gin.Logger())
 
+	router.GET("/api/banner", controllers.GetBanners)
+	router.GET("/api/banner/:id", controllers.GetBanner)
+	router.POST("/api/banner", controllers.CreateBanner)
+	router.PATCH("/api/banner/:id", controllers.UpdateBanner)
+	router.DELETE("/api/banner/:id", controllers.DeleteBanner)
+	
 	router.GET("/api/category", controllers.GetCategories)
 	router.GET("/api/category/:id", controllers.GetCategory)
 	router.POST("/api/category", controllers.CreateCategory)
 	router.PATCH("/api/category/:id", controllers.UpdateCategory)
 	router.DELETE("/api/category/:id", controllers.DeleteCategory)
+
+	router.GET("/api/customer", controllers.GetCustomers)
+	router.GET("/api/customer/:id", controllers.GetCustomer)
+	router.POST("/api/customer", controllers.CreateCustomer)
+	router.PATCH("/api/customer/:id", controllers.UpdateCustomer)
+	router.DELETE("/api/customer/:id", controllers.DeleteCustomer)
+
+	router.GET("/api/mantra", controllers.GetMantras)
+	router.GET("/api/mantra/:id", controllers.GetMantra)
+	router.POST("/api/mantra", controllers.CreateMantra)
+	router.PATCH("/api/mantra/:id", controllers.UpdateMantra)
+	router.DELETE("/api/mantra/:id", controllers.DeleteMantra)
+
+	router.POST("/api/media", controllers.CreateMedia)
+	router.DELETE("/api/media/:id", controllers.DeleteMedia)
+
+	router.GET("/api/message", controllers.GetMessages)
+	router.GET("/api/message/:id", controllers.GetMessage)
+	router.POST("/api/message", controllers.CreateMessage)
+	router.PATCH("/api/message/:id", controllers.UpdateMessage)
+	router.DELETE("/api/message/:id", controllers.DeleteMessage)
 
 	router.GET("/api/product", controllers.GetProducts)
 	router.GET("/api/product/:id", controllers.GetProduct)
@@ -43,6 +70,21 @@ func main()  {
 	router.DELETE("/api/product/:id", controllers.DeleteProduct)
 	router.GET("/api/printful/products", controllers.PrintfulGetProducts)
 	router.GET("/api/printful/products/:id", controllers.PrintfulGetProductById)
+
+	router.GET("/api/page", controllers.GetPages)
+	router.GET("/api/page/:id", controllers.GetPage)
+	router.GET("/api/page/code/:code", controllers.GetPageByCode)
+	router.POST("/api/page", controllers.CreatePage)
+	router.PATCH("/api/page/:id", controllers.UpdatePage)
+	router.DELETE("/api/page/:id", controllers.DeletePage)
+	
+	router.GET("/api/subscriber", controllers.GetSubscribers)
+	router.GET("/api/subscriber/:id", controllers.GetSubscriber)
+	router.POST("/api/subscriber", controllers.CreateSubscriber)
+	router.PATCH("/api/subscriber/:id", controllers.UpdateSubscriber)
+	router.DELETE("/api/subscriber/:id", controllers.DeleteSubscriber)
+
+	router.POST("/api/upload", controllers.Upload)
 
 	router.GET("/api/user", controllers.GetUsers)
 	router.GET("/api/user/:id", controllers.GetUser)

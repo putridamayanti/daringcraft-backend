@@ -48,7 +48,7 @@ func Init() bool {
 
 	for i := range dbs {
 		if dbs[i] == os.Getenv("MONGODB_DATABASE") {
-			log.Println("Found Lapis DB")
+			log.Println("Found Database")
 		}
 	}
 
