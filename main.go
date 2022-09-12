@@ -54,6 +54,7 @@ func main()  {
 	router.PATCH("/api/mantra/:id", controllers.UpdateMantra)
 	router.DELETE("/api/mantra/:id", controllers.DeleteMantra)
 
+	router.GET("/api/media", controllers.GetMedias)
 	router.POST("/api/media", controllers.CreateMedia)
 	router.DELETE("/api/media/:id", controllers.DeleteMedia)
 
