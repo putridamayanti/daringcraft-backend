@@ -78,6 +78,12 @@ func main()  {
 	router.POST("/api/page", controllers.CreatePage)
 	router.PATCH("/api/page/:id", controllers.UpdatePage)
 	router.DELETE("/api/page/:id", controllers.DeletePage)
+
+	router.GET("/api/post", controllers.GetPosts)
+	router.GET("/api/post/:id", controllers.GetPost)
+	router.POST("/api/post", controllers.CreatePost)
+	router.PATCH("/api/post/:id", controllers.UpdatePost)
+	router.DELETE("/api/post/:id", controllers.DeletePost)
 	
 	router.GET("/api/subscriber", controllers.GetSubscribers)
 	router.GET("/api/subscriber/:id", controllers.GetSubscriber)
